@@ -21,11 +21,12 @@ class ViewController: UIViewController {
         req.param = ""
         req.path = ""
         req.baseURL = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/25/explicit.json"
-        CustomContainer().makeCustomUseCase().execute(requestValue: req) { (response, error) in
-            
+
+        let container = AppDIContainer.shared.makeCustomContainer()
+        container.makeCustomUseCase().execute(requestValue: req) { (response, error) in
+            print(response)
+         }
         }
     }
 
-
-}
 
