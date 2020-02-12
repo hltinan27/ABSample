@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import NetworkAPI
+
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        var req = CustomRequest()
+        req.param = ""
+        req.path = ""
+        req.baseURL = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/25/explicit.json"
+        CustomContainer().makeCustomUseCase().execute(requestValue: req) { (response, error) in
+            
+        }
     }
 
 
